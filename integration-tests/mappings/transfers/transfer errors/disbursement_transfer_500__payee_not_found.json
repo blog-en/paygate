@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '8bbda81c-670c-4bb7-b45b-f3025d0b60cc')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"PAYEE_NOT_FOUND\", \"code\": \"PAYEE_NOT_FOUND\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

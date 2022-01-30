@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.payee[?(@.partyId == '2325215154')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 409,
+    "body": "{ \"message\": \"RESOURCE_ALREADY_EXIST\", \"code\": \"RESOURCE_ALREADY_EXIST\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

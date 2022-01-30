@@ -1,0 +1,36 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.payee[?(@.partyId == '2325215132')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 202,
+    "body": "{}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "postServeActions": [
+    {
+      "name": "webhook",
+      "parameters": {
+        "method": "POST",
+        "url": "{{#with originalRequest.headers }}{{X-Callback-Url}}{{/with}}/{{jsonPath originalRequest.body '$.externalId'}}",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": "{\"externalId\": \"{{jsonPath originalRequest.body '$.externalId'}}\" , \"payee\": {\"partyIdType\": \"{{jsonPath originalRequest.body '$.payee.partyIdType'}}\", \"partyId\": \"{{jsonPath originalRequest.body '$.payee.partyId'}}\"} , \"financialTransactionId\": 939373, \"currency\": \"{{jsonPath originalRequest.body '$.currency'}}\", \"amount\": {{jsonPath originalRequest.body '$.amount'}}, \"status\": \"SUCCESSFUL\" }",
+        "delay": {
+          "type": "uniform",
+          "lower": 200,
+          "upper": 1000
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '6c32a0e7-616f-4931-af38-68b18556ea3f')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": "{ \"message\": \"PAYMENT_NOT_APPROVED\", \"code\": \"PAYMENT_NOT_APPROVED\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

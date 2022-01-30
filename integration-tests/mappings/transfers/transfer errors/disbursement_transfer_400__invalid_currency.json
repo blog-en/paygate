@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '95f5efd9-b3d2-44b7-9462-6732fcbf98a1')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": "{ \"message\": \"INVALID_CURRENCY\", \"code\": \"INVALID_CURRENCY\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

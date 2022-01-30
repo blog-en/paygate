@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == 'cd4d10e2-ce57-4e54-865b-acc11ed91cd4')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"NOT_ALLOWED\", \"code\": \"NOT_ALLOWED\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

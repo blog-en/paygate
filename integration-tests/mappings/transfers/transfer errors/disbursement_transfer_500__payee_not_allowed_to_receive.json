@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '3bd37b89-b744-4c00-8b9b-a0e426f0656a')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"PAYEE_NOT_ALLOWED_TO_RECEIVE\", \"code\": \"PAYEE_NOT_ALLOWED_TO_RECEIVE\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '64c31e19-f1f6-423a-a433-0fe90d670454')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"RESOURCE_NOT_FOUND\", \"code\": \"RESOURCE_NOT_FOUND\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

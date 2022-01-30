@@ -1,0 +1,13 @@
+{
+      "request": {
+        "urlPathPattern": "/disbursement/v1_0/transfer/8c97a029-512b-47a9-aabb-ceb0d512e487",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "body": "{ \"amount\": 100, \"currency\": \"UGX\", \"externalId\": \"8c97a029-512b-47a9-aabb-ceb0d512e487\" , \"status\": \"PENDING\", \"payee\": {\"partyIdType\": \"MSISDN\", \"partyId\": 4656473833 }  }",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.payee[?(@.partyId == '2325215151')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 300,
+    "body": "bad response",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

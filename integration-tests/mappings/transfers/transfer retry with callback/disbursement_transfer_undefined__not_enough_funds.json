@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '6d66b814-a580-45de-bd12-f8d7a68b3cc1')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"NOT_ENOUGH_FUNDS\", \"code\": \"NOT_ENOUGH_FUNDS\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

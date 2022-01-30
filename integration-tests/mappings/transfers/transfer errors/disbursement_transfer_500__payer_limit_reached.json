@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == 'c1c8497e-7e2a-4494-8b48-5ba21bc3a877')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"PAYER_LIMIT_REACHED\", \"code\": \"PAYER_LIMIT_REACHED\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

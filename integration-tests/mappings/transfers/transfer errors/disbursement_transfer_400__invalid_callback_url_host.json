@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '91a6d4c4-5d53-497e-8937-cbc768d43a7c')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": "{ \"message\": \"INVALID_CALLBACK_URL_HOST\", \"code\": \"INVALID_CALLBACK_URL_HOST\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

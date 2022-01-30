@@ -1,0 +1,43 @@
+version: '3.7'
+
+#volumes:
+#  prometheus_data: {}
+#  grafana_data: {}
+
+services:
+
+  wiremock:
+    image: jalbert/wiremock:2.31.0
+    hostname: "wiremock"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - "${PWD-.}/integration-tests:/files-and-mappings-root"
+
+#  prometheus:
+#    image: prom/prometheus:v2.30.3
+#    hostname: "prometheus"
+#    extra_hosts:
+#      - "host.docker.internal:host-gateway"
+#    volumes:
+#      - "${PWD-.}/support/observability/prom/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
+#      - prometheus_data:/prometheus
+#    command:
+#      - '--config.file=/etc/prometheus/prometheus.yml'
+#      - '--storage.tsdb.path=/prometheus'
+#      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+#      - '--web.console.templates=/usr/share/prometheus/consoles'
+#
+#  grafana:
+#    image: grafana/grafana:8.2.1
+#    hostname: "grafana"
+#    ports:
+#      - '3000:3000'
+#    user: "472"
+#    volumes:
+##      - grafana_data:/var/lib/grafana
+#      - "${PWD-.}/support/observability/grafana/custom.ini:/usr/share/grafana/conf/defaults.ini:ro"
+#      - "${PWD-.}/support/observability/grafana/provisioning/:/etc/grafana/provisioning"
+#      - "${PWD-.}/support/observability/data/grafana:/var/lib/grafana"
+#    depends_on:
+#      - prometheus

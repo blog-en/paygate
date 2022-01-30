@@ -1,0 +1,36 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "transfer-pooling-2-times-failed",
+      "requiredScenarioState": "Started",
+      "newScenarioState": "retry 1",
+      "request": {
+        "urlPathPattern": "/disbursement/v1_0/transfer/f2ad4d47-86f0-49a5-b379-c48ab961a541",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "body": "{ \"amount\": 4230, \"currency\": \"UGX\", \"externalId\": \"f2ad4d47-86f0-49a5-b379-c48ab961a541\" , \"status\": \"PENDING\", \"payee\": {\"partyIdType\": \"MSISDN\", \"partyId\": 4656473833 }  }",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "transfer-pooling-2-times-failed",
+      "requiredScenarioState": "retry 1",
+      "newScenarioState": "Started",
+      "request": {
+        "urlPathPattern": "/disbursement/v1_0/transfer/f2ad4d47-86f0-49a5-b379-c48ab961a541",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "body": "{ \"amount\": 4230, \"currency\": \"UGX\", \"externalId\": \"f2ad4d47-86f0-49a5-b379-c48ab961a541\" , \"status\": \"FAILED\",  \"reason\": { \"code\": \"PAYMENT_NOT_APPROVED\", \"message\": \"PAYMENT_NOT_APPROVED\" }, \"payee\": {\"partyIdType\": \"MSISDN\", \"partyId\": 4656473833 }  }",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

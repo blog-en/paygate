@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.payee[?(@.partyId == '2325215153')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": "{ \"message\": \"EXPIRED\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

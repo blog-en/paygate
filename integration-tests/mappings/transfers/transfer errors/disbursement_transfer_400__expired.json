@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == 'd0ddb5ed-2235-4b1d-9c18-87fc23608aac')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": "{ \"message\": \"EXPIRED\", \"code\": \"EXPIRED\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

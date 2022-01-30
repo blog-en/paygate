@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == 'b5932974-aa5a-4493-bc2e-e0bb5730835b')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"APPROVAL_REJECTED\", \"code\": \"APPROVAL_REJECTED\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

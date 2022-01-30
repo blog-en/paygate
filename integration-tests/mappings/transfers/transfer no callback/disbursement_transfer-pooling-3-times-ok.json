@@ -1,0 +1,52 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "transfer-pooling-3-times-ok",
+      "requiredScenarioState": "Started",
+      "newScenarioState": "retry 1",
+      "request": {
+        "urlPathPattern": "/disbursement/v1_0/transfer/bf942c0e-e76a-460a-9650-ad5bee26aa2c",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "body": "{ \"amount\": 4230, \"currency\": \"UGX\", \"externalId\": \"bf942c0e-e76a-460a-9650-ad5bee26aa2c\" , \"status\": \"PENDING\", \"payee\": {\"partyIdType\": \"MSISDN\", \"partyId\": 4656473833 }  }",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "transfer-pooling-3-times-ok",
+      "requiredScenarioState": "retry 1",
+      "newScenarioState": "retry 2",
+      "request": {
+        "urlPathPattern": "/disbursement/v1_0/transfer/bf942c0e-e76a-460a-9650-ad5bee26aa2c",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "body": "{ \"amount\": 4230, \"currency\": \"UGX\", \"externalId\": \"bf942c0e-e76a-460a-9650-ad5bee26aa2c\" , \"status\": \"PENDING\", \"payee\": {\"partyIdType\": \"MSISDN\", \"partyId\": 4656473833 }  }",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "transfer-pooling-3-times-ok",
+      "requiredScenarioState": "retry 2",
+      "newScenarioState": "Started",
+      "request": {
+        "urlPathPattern": "/disbursement/v1_0/transfer/bf942c0e-e76a-460a-9650-ad5bee26aa2c",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "body": "{ \"amount\": 4230, \"currency\": \"UGX\", \"externalId\": \"bf942c0e-e76a-460a-9650-ad5bee26aa2c\" , \"status\": \"SUCCESSFUL\", \"payee\": {\"partyIdType\": \"MSISDN\", \"partyId\": 4656473833 }  }",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+defmodule Decorators.TokenSwitchTransferValidatorImpl do
+  @moduledoc false
+
+  defstruct [:self, :switch]
+
+  defimpl Types.PaymentServiceTransfer do
+    def execute(this, params) do
+      case Types.Switch.closed?(this.switch) do
+        {true, _} ->
+          Types.PaymentServiceTransfer.execute(this.self, params)
+
+        {false, _} ->
+          {:error, :transfer_token_service_down}
+      end
+    end
+  end
+end

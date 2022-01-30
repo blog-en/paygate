@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '5b977fe1-9d71-4ffc-8997-a051a1743fef')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"TRANSACTION_CANCELED\", \"code\": \"TRANSACTION_CANCELED\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

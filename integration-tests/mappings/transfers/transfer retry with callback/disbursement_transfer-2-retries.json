@@ -1,0 +1,85 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "transfer-2-retries",
+      "requiredScenarioState": "Started",
+      "newScenarioState": "retry 1",
+      "request": {
+        "url": "/disbursement/v1_0/transfer",
+        "method": "POST",
+        "bodyPatterns": [
+          {
+            "matchesJsonPath": "$[?(@.externalId == '7663e46b-75e3-4701-886f-cfe6c52f3a68')]"
+          }
+        ]
+      },
+      "response": {
+        "status": 500,
+        "body": "{ \"message\": \"INTERNAL_PROCESSING_ERROR\", \"code\": \"INTERNAL_PROCESSING_ERROR\" }",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "transfer-2-retries",
+      "requiredScenarioState": "retry 1",
+      "newScenarioState": "retry 2",
+      "request": {
+        "url": "/disbursement/v1_0/transfer",
+        "method": "POST",
+        "bodyPatterns": [
+          {
+            "matchesJsonPath": "$[?(@.externalId == '7663e46b-75e3-4701-886f-cfe6c52f3a68')]"
+          }
+        ]
+      },
+      "response": {
+        "status": 500,
+        "body": "{ \"message\": \"INTERNAL_PROCESSING_ERROR\", \"code\": \"INTERNAL_PROCESSING_ERROR\" }",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "transfer-2-retries",
+      "requiredScenarioState": "retry 2",
+      "newScenarioState": "Started",
+      "request": {
+        "url": "/disbursement/v1_0/transfer",
+        "method": "POST",
+        "bodyPatterns": [
+          {
+            "matchesJsonPath": "$[?(@.externalId == '7663e46b-75e3-4701-886f-cfe6c52f3a68')]"
+          }
+        ]
+      },
+      "response": {
+        "status": 202,
+        "body": "{}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions": [
+        {
+          "name": "webhook",
+          "parameters": {
+            "method": "POST",
+            "url": "{{#with originalRequest.headers }}{{X-Callback-Url}}{{/with}}/{{jsonPath originalRequest.body '$.externalId'}}",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": "{\"externalId\": \"{{jsonPath originalRequest.body '$.externalId'}}\" , \"payee\": {\"partyIdType\": \"{{jsonPath originalRequest.body '$.payee.partyIdType'}}\", \"partyId\": \"{{jsonPath originalRequest.body '$.payee.partyId'}}\"} , \"financialTransactionId\": 939373, \"currency\": \"{{jsonPath originalRequest.body '$.currency'}}\", \"amount\": {{jsonPath originalRequest.body '$.amount'}}, \"status\": \"SUCCESSFUL\" }",
+            "delay": {
+              "type": "uniform",
+              "lower": 200,
+              "upper": 1000
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

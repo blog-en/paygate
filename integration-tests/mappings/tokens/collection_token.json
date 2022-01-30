@@ -1,0 +1,13 @@
+{
+  "request": {
+    "url": "/collection/token/",
+    "method": "POST"
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"expires_in\": 3600, \"token_type\": \"access_token\", \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSMjU2In0.eyJjbGllbnRJZCI6ImJkN2JiNjM1LTk1MmItNDE5Zi1iOTBhLTlhZTc2NDhmOTkxNSIsImV4cGlyZXMiOiIyMDIxLTA4LTEwVDEwOjI4OjU4LjYzMCIsInNlc3Npb25JZCI6IjhhM2M5YWFkLTkyOTMtNDNkZC05N2E1LTg4ZGFjMzhiMTFiNSJ9.Xm6I5ukhBldU23p1J0BfrzA9wumq8AgBDnFgcNYUHNLmgb6bgdPtxSVxt0YvRhAEagJa1l4E3KzXgiDZMPuYob8j7m2wueCO6HD6k3TddIrg42dG6wmUeA3Uq7Ex77g9RddLtrc-8yOf85chujhF74VFQlYaOYzDZhgIn6nYixCWYI2LdqhWgPSCs8cG2DwxTZzf2NtkYddDPAAiSiE-q9L_O5DUH_R-cu3Ie5Tb967j3Qyp2_x8y5cR-CkaxMWXuSaKevg2U7yctwbFrREn6kjuy3_rTLu1_y8_18yKGKPiru7qQX3jIt_yMi3g9jaWCKJdw8_1I5Pc_HZEBHOayg\"}\n",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

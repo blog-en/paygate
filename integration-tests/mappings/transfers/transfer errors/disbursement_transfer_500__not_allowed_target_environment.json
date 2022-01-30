@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '97debdd9-9bf1-4fe2-8a87-a99195471b7b')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"NOT_ALLOWED_TARGET_ENVIRONMENT\", \"code\": \"NOT_ALLOWED_TARGET_ENVIRONMENT\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

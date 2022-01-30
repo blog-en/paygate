@@ -1,0 +1,42 @@
+
+:doctype: book
+:description: Payments project
+:source-highlighter: rouge
+:icons: font
+:toc: left
+:toc-collapsable:
+:sectlinks:
+:docinfo: private
+:toclevels: 4
+:numbered:
+:nofooter:
+:imagesdir: images
+
+= Payments documentation
+
+
+[[component_diagram]]
+== Component diagram
+[plantuml, target="component-c4", png]
+----
+include::src/payments-c4-component-diagram.puml[]
+----
+
+include::src/transfer_service.adoc[]
+
+include::src/token_provider.adoc[]
+
+include::src/circuit_breaker.adoc[]
+
+include::src/rate_limiting.adoc[]
+
+include::src/testing.adoc[]
+
+include::src/env_vars.adoc[]
+
+[[container_diagram]]
+=== Container diagram
+[plantuml, target="container-c4", png]
+----
+include::src/payments-c4-container-diagram.puml[]
+----

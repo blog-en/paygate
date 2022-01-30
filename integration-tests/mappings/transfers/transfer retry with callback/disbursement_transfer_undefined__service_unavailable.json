@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "/disbursement/v1_0/transfer",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.externalId == '872f334a-6923-460f-81df-9d41d95c0f35')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"message\": \"SERVICE_UNAVAILABLE\", \"code\": \"SERVICE_UNAVAILABLE\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
